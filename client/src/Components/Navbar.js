@@ -20,10 +20,10 @@ const Navbar = () => {
                     <Link className='nav-link' to='/'>Home <span className='sr-only'></span></Link>
                 </li>
                 <li className='nav-item'>
-                    <Link className='nav-link' to='/api/books'>Books</Link>
+                    <Link className='nav-link' to='/books'>Books</Link>
                 </li>
                 <li className='nav-item'>
-                    <Link className='nav-link' to='/api/createbooks'>Insert Book</Link>
+                    <Link className='nav-link' to='/createbooks'>Insert Book</Link>
                 </li>
             </ul>
        

@@ -23,6 +23,28 @@ const BookController = {
         .catch(err => {
             res.json(err);
         })
+    },
+
+    // delete book 
+    deleteBook(req,res) {
+        Book.findByIdAndDelete(req.params.id)
+        .then(book => {
+            res.json(book);
+        })
+        .catch(err => {
+            res.json(err);
+        }
+        )
+    },
+    // edit book
+    editBook(req,res) {
+        Book.findByIdAndUpdate(req.params.id, req.body)
+        .then(book => {
+            res.json(book);
+        })
+        .catch(err => {
+            res.json(err);
+        })
     }
 }
 

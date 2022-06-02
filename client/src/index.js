@@ -16,8 +16,8 @@ root.render(
   <React.StrictMode>
     <Routes>
       <Route path="/" element={<App />} />
-      <Route path="/api/books" element={<Books />} />
-      <Route path="/api/createbooks" element={<CreateBooks />} />
+      <Route path="/books" element={<Books />} />
+      <Route path="/createbooks" element={<CreateBooks />} />
     </Routes>
     
   </React.StrictMode>

@@ -18,6 +18,18 @@ const Books = () => {
     }, [])
 
 
+    // delete book  
+    const handleDelete = (id) => {
+        
+        Axios.delete(`http://localhost:3000/api/${id}`).then(res => {
+            console.log(res);
+            setBooks(books.filter(book => book._id !== id))
+        })
+        
+    }
+
+
+
 
   return isLoading ? (<p>Loading...</p>) : (<div><Navbar/> <div className='container'>
                     <div className='row'>
@@ -33,13 +45,13 @@ const Books = () => {
                                 </thead>
                                 <tbody>
                                     {books.map(book => (
-                                        <tr key={book.id}>
+                                        <tr key={book._id}>
                                             <td>{book.title}</td>
                                             <td>{book.author}</td>
                                             <td>{book.description}</td>
                                             <td>
                                                 <button className='btn btn-sm btn-warning mr-1' onClick={() => console.log('clicked') }>Edit</button>
-                                                <button className='btn btn-sm btn-danger' onClick={() => console.log('clicked')}>Delete</button>
+                                                <button className='btn btn-sm btn-danger' onClick={() => handleDelete(book._id)}>Delete</button>
                                             </td>
                                         </tr>
                                     ))}
