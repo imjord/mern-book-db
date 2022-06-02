@@ -9,18 +9,36 @@ const CreateBooks = () => {
     const [isLoading, setIsLoading] = useState(true);
 
    
+
+
+
     function handleSubmit(e) {
         e.preventDefault();
-        setIsLoading(true);
         axios.post('http://localhost:3000/api', {
             title,
             author,
             description
         }).then(res => {
             console.log(res);
-            setIsLoading(false);
+            setTitle('');
+            setAuthor('');
+            setDescription('');
         })
     }
+        // setTitle(e.target.title.value);
+        // setAuthor(e.target.author.value);
+        // setDescription(e.target.description.value);
+        // setIsLoading(true);
+        // console.log(title, author, description);
+        // axios.post('http://localhost:3000/api', {
+        //     title,
+        //     author,
+        //     description
+        // }).then(res => {
+        //     console.log(res);
+        //     setIsLoading(false);
+        // })
+    
 
 
   return (
@@ -35,10 +53,10 @@ const CreateBooks = () => {
                             <label>Title</label>
                             <input type='text' className='form-control' value={title} onChange={(e) => setTitle(e.target.value)} />
                             <label>Author</label>
-                            <input type='text' className='form-control' value={author} onChange={(e) => setAuthor(e.target.value)} />
+                            <input type='text' className='form-control'  value={author} onChange={(e) => setAuthor(e.target.value)}  />
                             <label>Description</label>
-                            <input type='text' className='form-control' value={description} onChange={(e) => setDescription(e.target.value)} />
-                            <button className='btn btn-primary' onClick={() => setIsLoading(true)}>Create</button>
+                            <input type='text' className='form-control'  value={description} onChange={(e) => setDescription(e.target.value)} />
+                            <button className='btn btn-primary' onClick={handleSubmit}>Create</button>
                             </div>  
                           
                     </form>
