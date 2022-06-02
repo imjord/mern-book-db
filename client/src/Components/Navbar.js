@@ -9,12 +9,17 @@ import App from '../App'
 import Books from './Books'
 import CreateBooks from './CreateBooks'
 
+
+
 const Navbar = () => {
   return (
   
     <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
         <Link className='navbar-brand' to='/'>Book DB</Link>
-        <div className='collapse navbar-collapse' id='navbarNav'>
+        {/* <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button> */}
+        {/* <div className='collapse navbar-collapse' id='navbarNav'> */}
             <ul className='navbar-nav'>
                 <li className='nav-item active'>
                     <Link className='nav-link' to='/'>Home <span className='sr-only'></span></Link>
@@ -27,7 +32,8 @@ const Navbar = () => {
                 </li>
             </ul>
        
-        </div>
+        {/* </div> */}
+        
     </nav>
  
   )

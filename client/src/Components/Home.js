@@ -1,4 +1,6 @@
 import React from 'react'
+import './comp.css'
+
 
 const Home = () => {
   return (

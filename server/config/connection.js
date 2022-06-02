@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 
-mongoose.connect('mongodb://localhost/mern-book-db');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/mern-book-db');
 
 
 

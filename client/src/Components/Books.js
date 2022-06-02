@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import Navbar from './Navbar'
 import Axios from 'axios'
+import './comp.css'
 
 const Books = () => {
 
@@ -45,12 +46,12 @@ const Books = () => {
                                 </thead>
                                 <tbody>
                                     {books.map(book => (
-                                        <tr key={book._id}>
-                                            <td>{book.title}</td>
-                                            <td>{book.author}</td>
-                                            <td>{book.description}</td>
+                                        <tr  key={book._id}>
+                                            <td style={{color: 'white'}}>{book.title}</td>
+                                            <td style={{color: 'white'}}>{book.author}</td>
+                                            <td style={{color: 'white'}}>{book.description}</td>
                                             <td>
-                                                <button className='btn btn-sm btn-warning mr-1' onClick={() => console.log('clicked') }>Edit</button>
+                                              
                                                 <button className='btn btn-sm btn-danger' onClick={() => handleDelete(book._id)}>Delete</button>
                                             </td>
                                         </tr>

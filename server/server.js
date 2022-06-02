@@ -1,9 +1,15 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 const cors = require('cors');
 const db = require('./config/connection');
 const routes = require('./routes');
+
+
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, '../client/build')));
+  }
+
 
 // middleware
 app.use(cors());
