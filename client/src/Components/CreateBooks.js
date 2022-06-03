@@ -13,7 +13,7 @@ const CreateBooks = () => {
   function handleSubmit(e) {
     e.preventDefault();
     axios
-      .post("http://localhost:3000/api", {
+      .post("/api", {
         title,
         author,
         description,

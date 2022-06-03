@@ -11,7 +11,7 @@ const Books = () => {
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
-        Axios.get('http://localhost:3000/api').then(res => { 
+        Axios.get('/api').then(res => { 
             console.log(res);
             setBooks(res.data)
             setIsLoading(false)
@@ -22,7 +22,7 @@ const Books = () => {
     // delete book  
     const handleDelete = (id) => {
         
-        Axios.delete(`http://localhost:3000/api/${id}`).then(res => {
+        Axios.delete(`/api/${id}`).then(res => {
             console.log(res);
             setBooks(books.filter(book => book._id !== id))
         })
